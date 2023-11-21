@@ -1,4 +1,4 @@
-displayName: UsersBlocker
+displayName: ResponseHeaderForward
 
 type: middleware
 
