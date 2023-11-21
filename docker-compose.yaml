@@ -1,0 +1,16 @@
+version: '3'
+
+services:
+  reverse-proxy:
+    image: traefik:v3.0
+    command:
+      - --api.insecure=true
+      - --providers.docker
+      - "--experimental.localPlugins.responseHeaderForward.moduleName=github.com/ditkrg/traefik-response-header-forward-plugin"
+    ports:
+      - "9090:80"
+      - "9091:8080"
+    volumes:
+      # So that Traefik can listen to the Docker events
+      - /var/run/docker.sock:/var/run/docker.sock
+      - ./:/plugins-local/src/github.com/ditkrg/traefik-response-header-forward-plugin

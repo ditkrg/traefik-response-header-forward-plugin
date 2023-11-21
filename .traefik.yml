@@ -1,0 +1,12 @@
+displayName: UsersBlocker
+
+type: middleware
+
+import: github.com/ditkrg/traefik-response-header-forward-plugin
+
+summary: A middleware to add headers from request to response.
+
+testData:
+  requestHeaders:
+    - userId1
+    - userId2
