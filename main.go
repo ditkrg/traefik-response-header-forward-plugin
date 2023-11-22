@@ -47,12 +47,12 @@ func New(ctx context.Context, next http.Handler, config *Config, name string) (h
 func (a *ResponseHeaderForward) ServeHTTP(rw http.ResponseWriter, req *http.Request) {
 	a.next.ServeHTTP(rw, req)
 
-	for _, requestHeader := range a.requestHeaders {
-		headerValue := req.Header.Get(requestHeader.Name)
-		if headerValue == "" {
-			continue
-		}
+	// for _, requestHeader := range a.requestHeaders {
+	// 	headerValue := req.Header.Get(requestHeader.Name)
+	// 	if headerValue == "" {
+	// 		continue
+	// 	}
 
-		rw.Header().Set(requestHeader.Name, headerValue)
-	}
+	// 	rw.Header().Set(requestHeader.Name, headerValue)
+	// }
 }
