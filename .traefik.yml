@@ -8,5 +8,5 @@ summary: A middleware to add headers from request to response.
 
 testData:
   requestHeaders:
-    - userId1
-    - userId2
+    - name: userId1
+    - name: userId2
